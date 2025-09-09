@@ -1,0 +1,31 @@
+# Configuration for the Real-time PPE Compliance Monitor
+
+# Video Input: Can be a file path or a camera stream URL
+video_stream: "path/to/your/sample_video.mp4" # Example: "rtsp://..." or 0 for webcam
+
+# Person Detection Model (e.g., YOLO)
+person_detector:
+  model_path: "models/yolov8n.pt" # Using a standard, small YOLOv8 model as an example
+  confidence_threshold: 0.6
+
+# Object Tracker Configuration
+tracker:
+  max_age: 30         # Max frames to keep a track alive without new detections
+  min_hits: 3         # Min consecutive detections to start a new track
+  iou_threshold: 0.3  # IOU threshold for associating detections with existing tracks
+
+# Frame Processing Settings
+# Run the heavy person detection model every N frames and rely on the tracker for intermediate frames.
+run_detection_every_n_frames: 10
+
+# List of Personal Protective Equipment to monitor
+ppe_items:
+  - helmet
+  - glasses
+  - breathing_device
+  - uniform
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  file: "logs/compliance_monitor.log"
