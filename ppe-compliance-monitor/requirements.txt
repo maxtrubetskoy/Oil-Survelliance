@@ -1,0 +1,22 @@
+# Core dependencies for the PPE Compliance Monitor
+
+# For running the YOLOv8 object detection model
+ultralytics
+
+# PyTorch is a dependency for ultralytics
+torch
+torchvision
+
+# For numerical operations, especially with image and detection data
+numpy
+
+# For reading the YAML configuration file
+pyyaml
+
+# For video and image processing (reading frames from video)
+opencv-python
+
+# For object tracking
+filterpy
+scikit-image
+scipy
